@@ -6,6 +6,8 @@ def home(request):
 def add(request):
 	var1=request.POST["num1"]
 	var2=request.POST["num2"]
-	res=int(var1)+int(var2)
-	return render(request,'result.html',{'result':res})
+	if (var1==var2=="admin"):
+		return render(request,'result.html',{'result':'success'})
+	else:
+		return render(request,'result.html',{'result':'failed'})
 # Create your views here.
